@@ -1,0 +1,44 @@
+type Video {
+  _id: ID!
+  category: String!
+  name: String!
+  file_name: String!
+  resolution: String!
+  extension: String!
+  length: String!
+  size: String!
+}
+
+type Photo {
+  _id: ID!
+  category: String!
+  name: String!
+  file_name: String!
+  resolution: String!
+  extension: String!
+}
+
+type Schedule {
+  _id: ID!
+  year: Int!
+  month: Int!
+  day: Int!
+  schedule: String!
+}
+
+type Category {
+  id: String!
+  name: String!
+  type: String!
+}
+
+type Query {
+  videos(category: String): [Video]!
+  photos(category: String): [Photo]!
+  schedules(year: Int, month: Int): [Schedule]!
+  categories: [Category]!
+  video(_id: ID!): Video
+  photo(_id: ID!): Photo
+  schedule(_id: ID!): Schedule
+  category(_id: ID!): Category
+}
