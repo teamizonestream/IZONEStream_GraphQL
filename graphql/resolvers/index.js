@@ -1,16 +1,14 @@
-import mongoose from "mongoose";
-import database from "../../database.json";
-
-mongoose.connect(
-  `mongodb+srv://${database.username}:${database.password}@${database.url}`,
-  { useNewUrlParser: true },
-  err => {
-    console.log(err);
-  }
-);
+import { getVideos, getVideoById } from "./Video";
 
 const resolvers = {
-  Query: {}
+  Query: {
+    async videos(_, { category }) {
+      return await getVideos(category);
+    },
+    async video(_, { _id }) {
+      return await getVideoById(_id);
+    }
+  }
 };
 
 export default resolvers;
