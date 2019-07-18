@@ -1,0 +1,14 @@
+{
+  "name": "IZONEStream_GraphQL",
+  "version": "1.0.0",
+  "description": "GraphQL Server of IZONEStream",
+  "main": "index.js",
+  "repository": "https://github.com/teamizonestream/IZONEStream_GraphQL",
+  "author": "teamizonestream",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "graphql-yoga": "^1.18.1",
+    "node-fetch": "^2.6.0"
+  }
+}
