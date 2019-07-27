@@ -19,6 +19,6 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "babel-node index.js"
   }
 }
