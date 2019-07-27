@@ -3,8 +3,6 @@ type Video {
   category: String!
   name: String!
   file_path: String!
-  resolution: String!
-  extension: String!
 }
 
 type Photo {
@@ -13,7 +11,6 @@ type Photo {
   name: String!
   file_name: String!
   resolution: String!
-  extension: String!
 }
 
 type Schedule {
