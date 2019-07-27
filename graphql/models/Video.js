@@ -5,23 +5,7 @@ const videoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  file_name: {
-    type: String,
-    required: true
-  },
-  resolution: {
-    type: String,
-    required: true
-  },
-  extension: {
-    type: String,
-    required: true
-  },
-  length: {
-    type: String,
-    required: true
-  },
-  size: {
+  file_path: {
     type: String,
     required: true
   },

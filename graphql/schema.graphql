@@ -9,7 +9,7 @@ type Photo {
   _id: ID!
   category: String!
   name: String!
-  file_name: String!
+  file_path: String!
   resolution: String!
 }
 
