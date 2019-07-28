@@ -1,11 +1,11 @@
-scalar Date
+scalar GraphQLDateTime
 
 type Video {
   _id: ID!
   category: String!
   name: String!
   filePath: String!
-  createdDate: Date!
+  createdDate: GraphQLDateTime!
 }
 
 type Photo {
@@ -14,15 +14,21 @@ type Photo {
   name: String!
   filePath: String!
   resolution: String!
-  createdDate: Date!
+  createdDate: GraphQLDateTime!
+}
+
+type ScheduleCategory {
+  categoryId: Int!
+  name: String!
+  color: String!
 }
 
 type Schedule {
-  _id: ID!
-  year: Int!
-  month: Int!
-  day: Int!
-  schedule: String!
+  scheduleId: Int!
+  startTime: GraphQLDateTime!
+  endTime: GraphQLDateTime!
+  title: String!
+  category: ScheduleCategory!
 }
 
 type Category {
@@ -34,10 +40,9 @@ type Category {
 type Query {
   videos(category: String): [Video]!
   photos(category: String): [Photo]!
-  schedules(year: Int, month: Int): [Schedule]!
+  schedules(startTime: GraphQLDateTime, endTime: GraphQLDateTime): [Schedule]!
   categories: [Category]!
   video(_id: ID!): Video
   photo(_id: ID!): Photo
-  schedule(_id: ID!): Schedule
   category(_id: ID!): Category
 }

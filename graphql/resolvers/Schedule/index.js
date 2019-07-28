@@ -1,17 +1,10 @@
-import Schedule from "../../models/Schedule";
+import fetch from "node-fetch";
 
-const getSchedules = async (year, month) => {
-  return year && month
-    ? Schedule.find({ year, month })
-    : year
-    ? Schedule.find({ year })
-    : month
-    ? Schedule.find({ month })
-    : Schedule.find();
-};
+const getSchedules = (startTime, endTime) =>
+  fetch(
+    `http://cafe.daum.net/_c21_/api/schedule?grpid=1Y3By&fldid=l0C7&startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`
+  )
+    .then(response => response.json())
+    .then(json => json.scheduleList);
 
-const getScheduleById = async _id => {
-  return await Schedule.findById(_id);
-};
-
-export { getSchedules, getScheduleById };
+export { getSchedules };
