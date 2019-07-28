@@ -5,12 +5,16 @@ const videoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  file_path: {
+  filePath: {
     type: String,
     required: true
   },
   category: {
     type: String,
+    required: true
+  },
+  createdDate: {
+    type: Date,
     required: true
   }
 });

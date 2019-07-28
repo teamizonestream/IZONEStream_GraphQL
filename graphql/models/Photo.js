@@ -5,7 +5,7 @@ const photoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  file_path: {
+  filePath: {
     type: String,
     required: true
   },
@@ -15,6 +15,10 @@ const photoSchema = new mongoose.Schema({
   },
   category: {
     type: String,
+    required: true
+  },
+  createdDate: {
+    type: Date,
     required: true
   }
 });

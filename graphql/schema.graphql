@@ -2,15 +2,17 @@ type Video {
   _id: ID!
   category: String!
   name: String!
-  file_path: String!
+  filePath: String!
+  createdDate: Date!
 }
 
 type Photo {
   _id: ID!
   category: String!
   name: String!
-  file_path: String!
+  filePath: String!
   resolution: String!
+  createdDate: Date!
 }
 
 type Schedule {
