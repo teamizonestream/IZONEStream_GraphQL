@@ -1,7 +1,19 @@
 import Photo from "../../models/Photo";
 
-const getPhotos = async category => {
-  return category ? await Photo.find({ category }) : await Photo.find();
+const getPhotos = async (category, page) => {
+  if (category) {
+    return page
+      ? await Photo.find({ category })
+          .skip((page - 1) * 10)
+          .limit(10)
+      : await Photo.find({ category });
+  }
+
+  return page
+    ? await Photo.find()
+        .skip((page - 1) * 10)
+        .limit(10)
+    : await Photo.find();
 };
 
 const getPhotoById = async _id => {
