@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "graphql-iso-date": "^3.6.1",
     "graphql-yoga": "^1.18.1",
     "mongoose": "^5.6.5",
     "node-fetch": "^2.6.0"
