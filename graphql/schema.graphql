@@ -44,5 +44,5 @@ type Query {
   categories: [Category]!
   video(_id: ID!): Video
   photo(_id: ID!): Photo
-  category(_id: ID!): Category
+  category(id: String!): Category
 }

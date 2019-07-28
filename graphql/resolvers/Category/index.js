@@ -1,11 +1,11 @@
 import Category from "../../models/Category";
 
-const getCategories = async => {
+const getCategories = () => {
   return Category.find();
 };
 
-const getCategoryById = async _id => {
-  return await Category.findById(_id);
+const getCategoryById = async id => {
+  return await Category.findOne({ id: id });
 };
 
 export { getCategories, getCategoryById };

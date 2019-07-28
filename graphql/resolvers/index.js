@@ -13,7 +13,7 @@ const resolvers = {
     photo: (_, { _id }) => getPhotoById(_id),
     schedules: (_, { startTime, endTime }) => getSchedules(startTime, endTime),
     categories: () => getCategories(),
-    category: (_, { _id }) => getCategoryById(_id)
+    category: (_, { id }) => getCategoryById(id)
   }
 };
 
