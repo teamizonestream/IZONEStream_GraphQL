@@ -38,7 +38,7 @@ type Category {
 }
 
 type Query {
-  videos(category: String, page: Int): [Video]!
+  videos(category: String, page: Int, searchText: String): [Video]!
   photos(category: String, page: Int): [Photo]!
   schedules(startTime: GraphQLDateTime, endTime: GraphQLDateTime): [Schedule]!
   categories: [Category]!

@@ -7,7 +7,7 @@ import { getCategories, getCategoryById } from "./Category";
 const resolvers = {
   GraphQLDateTime: GraphQLDateTime,
   Query: {
-    videos: (_, { category, page }) => getVideos(category, page),
+    videos: (_, { category, page, searchText }) => getVideos(category, page, searchText),
     video: (_, { _id }) => getVideoById(_id),
     photos: (_, { category, page }) => getPhotos(category, page),
     photo: (_, { _id }) => getPhotoById(_id),
