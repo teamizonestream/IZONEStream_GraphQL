@@ -2,9 +2,7 @@ import Video from "../../models/Video";
 
 const getVideos = async (category, page, searchText) => {
   if (searchText) {
-    const regex = new RegExp(`/${searchText}/`);
-
-    return Video.find({ name: regex });
+    return Video.find({ name: new RegExp(searchText) });
   }
 
   if (category) {
